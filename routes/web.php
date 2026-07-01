@@ -10,18 +10,45 @@ use App\Livewire\Kasir;
 use App\Livewire\KasirForm;
 use App\Livewire\KategoriDetail;
 use App\Livewire\Kategoris;
+use App\Livewire\Laporan\LaporanBarangKeluar;
+use App\Livewire\Laporan\LaporanBarangMasuk;
+use App\Livewire\Laporan\LaporanPenjualan;
 use App\Livewire\Laporan\Laporans;
 use App\Livewire\Laporan\LaporanStok;
-use App\Livewire\Laporan\LaporanPenjualan;
-use App\Livewire\Laporan\LaporanBarangMasuk;
-use App\Livewire\Laporan\LaporanBarangKeluar;
 use App\Livewire\StockInForm;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 // Landing page
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect()->route('subscription.index')->with('success', 'Email berhasil diverifikasi, Silakan pilih paket langganan!');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('status', 'verification-link-sent');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+// Guest routes
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+
+    Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+    Route::post('/register', [RegisterController::class, 'register']);
+});
+
+
 // Admin routes
 Route::middleware(['auth', 'role:super_admin'])->prefix('admin')->name('admin.')->group(function () {
 
@@ -71,18 +98,11 @@ Route::middleware(['auth', 'role:super_admin'])->prefix('admin')->name('admin.')
     Route::get('/notifications', [NotificationController::class, 'adminIndex'])->name('notifications.index');
 });
 
-// Guest routes
-Route::middleware('guest')->group(function () {
-    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [AuthController::class, 'login']);
-
-    Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-    Route::post('/register', [RegisterController::class, 'register']);
-});
+// Logout route - accessible by auth users (verified or not)
+Route::middleware('auth')->post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Authenticated routes
-Route::middleware('auth')->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::middleware(['auth', 'verified'])->group(function () {
 
     // Dashboard - Semua role
     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
@@ -117,13 +137,11 @@ Route::middleware('auth')->group(function () {
         // Stock Management
         Route::prefix('stock')->name('stock.')->group(function () {
             Route::get('/in', [StockInController::class, 'index'])->name('in.index');
-            Route::get('/stock/in/create', StockInForm::class)->name('in.create');
+            Route::get('/in/create', StockInForm::class)->name('in.create');
             Route::get('/in/{stockIn}', [StockInController::class, 'show'])->name('in.show');
 
             Route::get('/out', [StockOutController::class, 'index'])->name('out.index');
-            Route::get('/out/create', [StockOutController::class, 'create'])->name('out.create');
-            Route::post('/out', [StockOutController::class, 'store'])->name('out.store');
-            Route::get('/out/available-stock/{barangId}', [StockOutController::class, 'getAvailableStock'])->name('out.available');
+            Route::get('/out/create', \App\Livewire\StockOutForm::class)->name('out.create');
             Route::get('/out/{stockOut}', [StockOutController::class, 'show'])->name('out.show');
 
             Route::get('/batch', [StockBatchController::class, 'index'])->name('batch.index');
@@ -158,16 +176,6 @@ Route::middleware('auth')->group(function () {
                 Route::get('excel', [LaporanExportController::class, 'barangKeluarExcel'])->name('excel');
                 Route::get('pdf',   [LaporanExportController::class, 'barangKeluarPdf'])->name('pdf');
             });
-
-            // Export Routes
-            // Route::get('/stok/export/excel', [LaporanController::class, 'exportStokExcel'])->name('stok.export.excel');
-            // Route::get('/stok/export/pdf', [LaporanController::class, 'exportStokPdf'])->name('stok.export.pdf');
-            // Route::get('/penjualan/export/excel', [LaporanController::class, 'exportPenjualanExcel'])->name('penjualan.export.excel');
-            // Route::get('/penjualan/export/pdf', [LaporanController::class, 'exportPenjualanPdf'])->name('penjualan.export.pdf');
-            // Route::get('/barang-masuk/export/excel', [LaporanController::class, 'exportBarangMasukExcel'])->name('barang-masuk.export.excel');
-            // Route::get('/barang-masuk/export/pdf', [LaporanController::class, 'exportBarangMasukPdf'])->name('barang-masuk.export.pdf');
-            // Route::get('/barang-keluar/export/excel', [LaporanController::class, 'exportBarangKeluarExcel'])->name('barang-keluar.export.excel');
-            // Route::get('/barang-keluar/export/pdf', [LaporanController::class, 'exportBarangKeluarPdf'])->name('barang-keluar.export.pdf');
         });
 
         // Manajemen Kasir - Owner only

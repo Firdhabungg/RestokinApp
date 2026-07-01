@@ -31,10 +31,10 @@
     <div class="bg-white rounded-2xl shadow-sm p-3 mb-3">
         <div class="relative">
             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <i class="fas fa-search text-amber-500 text-lg"></i>
+                <i class="fas fa-search text-blue-500 text-lg"></i>
             </div>
             <input type="text" wire:model.live.debounce.300ms="search" placeholder="Cari barang..."
-                class="w-full pl-12 pr-12 py-2 bg-white border-2 border-amber-200/50 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-4 focus:ring-amber-100 transition-all duration-300 text-base shadow-sm" />
+                class="w-full pl-12 pr-12 py-2 bg-white border-2 border-blue-200/50 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-100 transition-all duration-300 text-base shadow-sm" />
         </div>
     </div>
 

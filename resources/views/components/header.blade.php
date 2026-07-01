@@ -9,7 +9,7 @@
         .catch(e => console.log('No notifications'));">
     <div class="flex items-center gap-4">
         <div>
-            <h1 class="text-sm font-bold text-slate-800">@yield('page-title', 'Dashboard')</h1>
+            <h1 class="text-xl font-bold text-slate-800">@yield('page-title', 'Dashboard')</h1>
             <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">@yield('page-description')</p>
         </div>
     </div>
@@ -61,7 +61,7 @@
 
                 <div class="p-3 border-t bg-gray-50">
                     <a href="{{ route('notifications.index') }}"
-                        class="block text-center text-sm text-amber-600 hover:text-amber-700 font-medium">
+                        class="block text-center text-sm text-blue-600 hover:text-blue-700 font-medium">
                         Lihat Semua Notifikasi
                     </a>
                 </div>
@@ -69,14 +69,16 @@
         </div>
 
         {{-- Profile --}}
-        <a href="{{ route('profil.index') }}" class="flex items-center gap-2 py-2 px-4 rounded-full transition-colors hover:bg-amber-50">
-            <div class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center">
+        <a href="{{ route('profil.index') }}"
+            class="flex items-center gap-2 py-2 px-4 rounded-full transition-colors hover:bg-blue-50">
+            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
                 <i class="fas fa-user text-white text-sm"></i>
             </div>
             <div class="text-center hidden md:block">
-                <p class="text-sm font-bold group-hover:text-amber-600 transition-colors">{{ auth()->user()->name }}</p>
+                <p class="text-sm font-bold group-hover:text-blue-600 transition-colors">
+                    {{ Str::limit(auth()->user()->name, 7) }}</p>
                 <span class="text-xs text-gray-500">
-                    @if(auth()->user()->isSuperAdmin())
+                    @if (auth()->user()->isSuperAdmin())
                         Super Admin
                     @elseif(auth()->user()->isOwner())
                         Owner

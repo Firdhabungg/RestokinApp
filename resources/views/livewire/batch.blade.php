@@ -39,10 +39,10 @@
     <div class="bg-white rounded-2xl shadow-sm p-3 mb-3">
         <div class="relative">
             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <i class="fas fa-search text-amber-500 text-lg"></i>
+                <i class="fas fa-search text-blue-500 text-lg"></i>
             </div>
             <input type="text" wire:model.live="search" placeholder="Cari Batch"
-                class="w-full pl-12 pr-4 py-2 bg-white border-2 border-amber-200/50 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-4 focus:ring-amber-100 transition-all duration-300 text-base shadow-sm">
+                class="w-full pl-12 pr-4 py-2 bg-white border-2 border-blue-200/50 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-100 transition-all duration-300 text-base shadow-sm">
         </div>
         <div class="flex items-center gap-4 mt-3 text-sm text-gray-500">
             <button type="button" wire:click="setStatus('aman')"
@@ -66,7 +66,7 @@
 
     <div class="relative overflow-x-auto shadow-sm rounded-xl border border-gray-200">
         <table class="w-full text-sm text-left text-gray-600">
-            <thead class="bg-amber-400 border-b border-gray-200">
+            <thead class="bg-blue-400 border-b border-gray-200">
                 <tr>
                     <th class="px-6 py-3 font-semibold text-gray-700">Kode Batch</th>
                     <th class="px-6 py-3 font-semibold text-gray-700">Barang</th>

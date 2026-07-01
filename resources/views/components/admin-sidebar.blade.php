@@ -14,16 +14,16 @@
 
         <div class="h-20 flex items-center justify-center md:justify-start md:px-6 border-b border-transparent">
             <div class="hidden md:flex items-center gap-3 w-full transition-all duration-300">
-                <div class="bg-amber-500 px-3 py-2 rounded-xl shadow-sm shrink-0">
+                <div class="bg-blue-500 px-3 py-2 rounded-xl shadow-sm shrink-0">
                     <i class="fas fa-box text-white"></i>
                 </div>
                 <span id="logo-text-brand" class="text-xl font-bold text-gray-800 whitespace-nowrap">
-                    Stok<span class="text-amber-500">In</span>
+                    Stok<span class="text-blue-500">In</span>
                 </span>
             </div>
 
             <div class="md:hidden flex items-center justify-center w-full">
-                <button @click="mobileOpen = false" class="text-gray-500 text-xl hover:text-amber-500 transition">
+                <button @click="mobileOpen = false" class="text-gray-500 text-xl hover:text-blue-500 transition">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -82,7 +82,7 @@
             {{-- Toggle Button (Desktop) --}}
             <div class="mt-4 hidden md:block">
                 <button @click="$store.adminSidebar.toggle()"
-                    class="w-full flex items-center gap-3 px-4 py-3 text-gray-400 hover:bg-gray-50 hover:text-amber-500 rounded-xl transition-all duration-200">
+                    class="w-full flex items-center gap-3 px-4 py-3 text-gray-400 hover:bg-gray-50 hover:text-blue-500 rounded-xl transition-all duration-200">
                     <i class="fas fa-chevron-left transition-transform duration-300"
                         :class="$store.adminSidebar.mini ? 'rotate-180' : ''"></i>
                     <span class="nav-text text-sm font-semibold">Tutup</span>

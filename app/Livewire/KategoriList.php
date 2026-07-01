@@ -56,6 +56,7 @@ class KategoriList extends Component
         $kategori->delete();
         $this->resetPage();
         session()->flash('success', 'Kategori berhasil dihapus');
+        $this->js("Swal.fire({title: 'Berhasil!', text: 'Kategori berhasil dihapus.', icon: 'success', timer: 3000, showConfirmButton: false})");
     }
 
     public function resetDelete(): void

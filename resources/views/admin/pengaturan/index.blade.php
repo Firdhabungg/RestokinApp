@@ -53,13 +53,13 @@
                     <div>
                         <label class="text-sm font-semibold text-gray-600">Nama Aplikasi</label>
                         <input type="text" name="nama_aplikasi" value="{{ old('nama_aplikasi', $settings['app_name']) }}"
-                            class="mt-2 w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-amber-500 outline-none">
+                            class="mt-2 w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none">
                     </div>
 
                     <div>
                         <label class="text-sm font-semibold text-gray-600">Versi Aplikasi</label>
                         <input type="text" name="versi" value="{{ old('versi', $settings['app_version']) }}"
-                            class="mt-2 w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-amber-500 outline-none">
+                            class="mt-2 w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none">
                     </div>
                 </div>
             </div>
@@ -77,20 +77,20 @@
                     <div>
                         <label class="text-sm font-semibold text-gray-600">Email Admin</label>
                         <input type="email" name="email_admin" value="{{ old('email_admin', $settings['admin_email']) }}"
-                            class="mt-2 w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-amber-500 outline-none">
+                            class="mt-2 w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none">
                     </div>
 
                     <div>
                         <label class="text-sm font-semibold text-gray-600">Nomor Telepon</label>
                         <input type="text" name="telepon" value="{{ old('telepon', $settings['admin_phone']) }}"
                             placeholder="08xxxxxxxxxx"
-                            class="mt-2 w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-amber-500 outline-none">
+                            class="mt-2 w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none">
                     </div>
 
                     <div class="md:col-span-2">
                         <label class="text-sm font-semibold text-gray-600">Alamat</label>
                         <textarea name="alamat" rows="3"
-                            class="mt-2 w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-amber-500 outline-none"
+                            class="mt-2 w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"
                             placeholder="Alamat kantor / pengelola aplikasi">{{ old('alamat', $settings['admin_address']) }}</textarea>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     Reset
                 </button>
                 <button type="submit"
-                    class="px-6 py-2.5 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600 transition">
+                    class="px-6 py-2.5 rounded-xl bg-blue-500 text-white font-bold hover:bg-blue-600 transition">
                     Simpan Pengaturan
                 </button>
             </div>

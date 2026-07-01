@@ -11,10 +11,10 @@
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 @foreach ($plans as $plan)
                     <div
-                        class="bg-white rounded-2xl shadow-lg p-8 {{ !$plan->isFree() ? 'border-2 border-amber-500 relative' : 'border border-gray-200' }}">
+                        class="bg-white rounded-2xl shadow-lg p-8 {{ !$plan->isFree() ? 'border-2 border-blue-500 relative' : 'border border-gray-200' }}">
                         @if (!$plan->isFree())
                             <div
-                                class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-amber-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                                class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
                                 POPULER
                             </div>
                         @endif
@@ -68,12 +68,12 @@
 
                         @auth
                             <a href="{{ route('subscription.checkout', $plan->slug) }}"
-                                class="block w-full py-3 text-center rounded-xl font-bold transition-colors {{ $plan->isFree() ? 'bg-gray-100 hover:bg-gray-200 text-gray-700' : 'bg-amber-500 hover:bg-amber-600 text-white' }}">
+                                class="block w-full py-3 text-center rounded-xl font-bold transition-colors {{ $plan->isFree() ? 'bg-gray-100 hover:bg-gray-200 text-gray-700' : 'bg-blue-500 hover:bg-blue-600 text-white' }}">
                                 {{ $plan->isFree() ? 'Mulai Trial' : 'Pilih Pro' }}
                             </a>
                         @else
                             <a href="{{ route('register', ['plan' => $plan->slug]) }}"
-                                class="block w-full py-3 text-center rounded-xl font-bold transition-colors {{ $plan->isFree() ? 'bg-gray-100 hover:bg-gray-200 text-gray-700' : 'bg-amber-500 hover:bg-amber-600 text-white' }}">
+                                class="block w-full py-3 text-center rounded-xl font-bold transition-colors {{ $plan->isFree() ? 'bg-gray-100 hover:bg-gray-200 text-gray-700' : 'bg-blue-500 hover:bg-blue-600 text-white' }}">
                                 {{ $plan->isFree() ? 'Mulai Trial' : 'Pilih Pro' }}
                             </a>
                         @endauth

@@ -62,6 +62,7 @@ class KategoriForm extends Component
                 'deskripsi_kategori' => $this->deskripsi_kategori,
             ]);
             session()->flash('success', 'Kategori berhasil diperbarui');
+            $this->js("Swal.fire({title: 'Berhasil!', text: 'Kategori berhasil diperbarui.', icon: 'success', timer: 3000, showConfirmButton: false})");
         } else {
             KategoriBarang::create([
                 'toko_id'            => $tokoId,
@@ -69,6 +70,7 @@ class KategoriForm extends Component
                 'deskripsi_kategori' => $this->deskripsi_kategori,
             ]);
             session()->flash('success', 'Kategori berhasil ditambahkan');
+            $this->js("Swal.fire({title: 'Berhasil!', text: 'Kategori berhasil ditambahkan.', icon: 'success', timer: 3000, showConfirmButton: false})");
         }
 
         $this->resetForm();
@@ -76,6 +78,7 @@ class KategoriForm extends Component
         $this->dispatch('close-modal');
     }
 
+    #[On('reset-form')]
     public function resetForm(): void
     {
         $this->reset(['nama_kategori', 'deskripsi_kategori', 'editId']);

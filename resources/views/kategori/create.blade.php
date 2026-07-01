@@ -31,7 +31,7 @@
                         </label>
                         <input type="text" name="nama_kategori" id="nama_kategori" required
                             value="{{ old('nama_kategori') }}" placeholder="Contoh: Makanan Ringan, Minuman, Sembako"
-                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors">
+                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
                     </div>
 
                     <div>
@@ -40,7 +40,7 @@
                         </label>
                         <textarea name="deskripsi_kategori" id="deskripsi_kategori" rows="3"
                             placeholder="Deskripsi singkat tentang kategori ini..."
-                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors">{{ old('deskripsi_kategori') }}</textarea>
+                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">{{ old('deskripsi_kategori') }}</textarea>
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@
                         Batal
                     </a>
                     <button type="submit"
-                        class="px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-lg transition-colors">
+                        class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
                         <i class="fas fa-save mr-2"></i>
                         Simpan Kategori
                     </button>

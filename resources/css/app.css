@@ -16,7 +16,7 @@
     --font-sans: 'Lexend', ui-sans-serif, system-ui, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-    --color-amber-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    --color-blue-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
     --transition-timing-function-soft: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -40,14 +40,14 @@
         will-change: transform, box-shadow;
     }
 
-    /* Varian shadow amber */
-    .card-hover-amber {
-        @apply hover:shadow-amber-300/60;
+    /* Varian shadow blue */
+    .card-hover-blue {
+        @apply hover:shadow-blue-300/60;
     }
 
     /* Hover khusus paket harga */
     .pricing-hover {
-        @apply transition-all duration-300 ease-out transform hover:-translate-y-2 hover:bg-amber-50 hover:shadow-xl hover:shadow-amber-400/50;
+        @apply transition-all duration-300 ease-out transform hover:-translate-y-2 hover:bg-blue-50 hover:shadow-xl hover:shadow-blue-400/50;
         will-change: transform, box-shadow, background-color;
     }
 
@@ -99,11 +99,11 @@
     }
 
     .dataTables_wrapper .dataTables_length select {
-        @apply px-3 py-2 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-amber-500;
+        @apply px-3 py-2 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500;
     }
 
     .dataTables_wrapper .dataTables_filter input {
-        @apply px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 ml-2;
+        @apply px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ml-2;
     }
 
     .dataTables_wrapper .dataTables_info {
@@ -117,13 +117,13 @@
 
     /* Base Pagination Button */
     .dataTables_wrapper .dataTables_paginate .paginate_button {
-        @apply inline-flex items-center justify-center min-w-[38px] h-[38px] px-3 rounded-xl text-gray-600 border border-gray-200 bg-white font-semibold text-sm hover:bg-amber-50 hover:text-amber-600 hover:border-amber-300 hover:shadow-sm transition-all duration-200 cursor-pointer select-none;
+        @apply inline-flex items-center justify-center min-w-[38px] h-[38px] px-3 rounded-xl text-gray-600 border border-gray-200 bg-white font-semibold text-sm hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 hover:shadow-sm transition-all duration-200 cursor-pointer select-none;
     }
 
     /* Active/Current Page */
     .dataTables_wrapper .dataTables_paginate .paginate_button.current,
     .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-        @apply bg-gradient-to-br from-amber-500 to-amber-600 text-white border-amber-500 shadow-lg shadow-amber-500/30;
+        @apply bg-gradient-to-br from-blue-500 to-blue-600 text-white border-blue-500 shadow-lg shadow-blue-500/30;
     }
 
     /* Disabled State */

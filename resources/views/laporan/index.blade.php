@@ -32,8 +32,8 @@
         </div>
         <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
             <div class="flex items-center gap-3">
-                <div class="bg-amber-100 p-3 rounded-full">
-                    <i class="fas fa-money-bill text-amber-600"></i>
+                <div class="bg-blue-100 p-3 rounded-full">
+                    <i class="fas fa-money-bill text-blue-600"></i>
                 </div>
                 <div>
                     <p class="text-sm text-gray-500">Penjualan Bulan Ini</p>

@@ -10,21 +10,21 @@
         <div class="grid grid-cols-1 md:grid-cols-{{ $plans->count() > 3 ? 3 : $plans->count() }} gap-6">
             @foreach ($plans as $plan)
                 <div
-                    class="bg-white rounded-xl p-6 shadow-sm border {{ $plan->slug === 'pro' ? 'border-amber-200' : 'border-gray-100' }} relative overflow-hidden">
+                    class="bg-white rounded-xl p-6 shadow-sm border {{ $plan->slug === 'pro' ? 'border-blue-200' : 'border-gray-100' }} relative overflow-hidden">
                     @if ($plan->slug === 'pro')
                         <span
-                            class="absolute top-0 right-0 bg-amber-500 text-white text-[10px] font-black px-4 py-1 rounded-bl-xl uppercase">
+                            class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-black px-4 py-1 rounded-bl-xl uppercase">
                             Populer
                         </span>
                     @endif
                     <div class="flex items-center justify-between mb-4">
                         <div
-                            class="p-3 {{ $plan->slug === 'pro' ? 'bg-amber-50 text-amber-600' : ($plan->slug === 'free' ? 'bg-blue-50 text-blue-600' : 'bg-purple-50 text-purple-600') }} rounded-xl">
+                            class="p-3 {{ $plan->slug === 'pro' ? 'bg-blue-50 text-blue-600' : ($plan->slug === 'free' ? 'bg-blue-50 text-blue-600' : 'bg-purple-50 text-purple-600') }} rounded-xl">
                             <i
                                 class="fas {{ $plan->slug === 'pro' ? 'fa-bolt' : ($plan->slug === 'free' ? 'fa-gift' : 'fa-crown') }} text-lg"></i>
                         </div>
                         <span
-                            class="text-[10px] font-bold {{ $plan->slug === 'pro' ? 'text-amber-500' : 'text-gray-400' }} uppercase tracking-widest">
+                            class="text-[10px] font-bold {{ $plan->slug === 'pro' ? 'text-blue-500' : 'text-gray-400' }} uppercase tracking-widest">
                             {{ $plan->slug === 'free' ? 'Trial' : ($plan->slug === 'pro' ? 'Growth' : 'Premium') }}
                         </span>
                     </div>
@@ -115,14 +115,14 @@
                                     @endif
                                 </td>
                                 <td class="px-6 py-4 text-center">
-                                    <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-bold">
+                                    <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold">
                                         {{ $plan->active_count }}
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 text-center">
                                     <div class="flex items-center justify-center gap-2">
                                         <a href="{{ route('admin.kelola-paket.edit', $plan) }}"
-                                            class="p-2 text-gray-400 hover:text-amber-600 transition-colors" title="Edit">
+                                            class="p-2 text-gray-400 hover:text-blue-600 transition-colors" title="Edit">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                         <form action="{{ route('admin.kelola-paket.toggle', $plan) }}" method="POST"

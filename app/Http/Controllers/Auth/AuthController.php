@@ -31,6 +31,13 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             $user = Auth::user();
+
+            if (!$user->hasVerifiedEmail()) {
+                return redirect()->route('verification.notice')
+                    ->with('info', 'Silakan verifikasi email Anda sebelum melanjutkan.');
+            }
+
+            // Jika Super Admin, arahkan ke dashboard admin
             if ($user->isSuperAdmin()) {
                 return redirect()->route('admin.dashboard')->with('success', 'Login berhasil!');
             }

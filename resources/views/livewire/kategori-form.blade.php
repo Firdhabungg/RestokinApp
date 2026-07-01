@@ -1,11 +1,21 @@
 <div>
+    <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-semibold text-gray-800">
+            {{ $editId ? 'Edit Kategori' : 'Tambah Kategori' }}
+        </h2>
+        <button type="button" onclick="document.getElementById('modal-kategori').classList.add('hidden')"
+            class="text-gray-400 hover:text-gray-600 transition-colors">
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+    </div>
+
     <form wire:submit="save">
         <div class="mb-3">
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Nama Kategori <span class="text-red-500">*</span>
             </label>
             <input type="text" wire:model="nama_kategori"
-                class="w-full px-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm @error('nama_kategori') border-red-500 @enderror"
+                class="w-full px-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm @error('nama_kategori') border-red-500 @enderror"
                 placeholder="Contoh: Minuman" />
             @error('nama_kategori')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -17,7 +27,7 @@
                 Deskripsi
             </label>
             <textarea wire:model="deskripsi_kategori"
-                class="w-full px-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm @error('deskripsi_kategori') border-red-500 @enderror"
+                class="w-full px-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm @error('deskripsi_kategori') border-red-500 @enderror"
                 rows="3" placeholder="Opsional"></textarea>
             @error('deskripsi_kategori')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -26,7 +36,7 @@
 
         <div class="flex items-center gap-2">
             <button type="submit"
-                class="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors">
+                class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors">
                 <svg wire:loading wire:target="save" aria-hidden="true"
                     class="w-4 h-4 text-neutral-quaternary animate-spin fill-brand" viewBox="0 0 100 101" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -43,6 +53,7 @@
 
             @if ($editId)
                 <button type="button" wire:click="resetForm"
+                    onclick="document.getElementById('modal-kategori').classList.add('hidden')"
                     class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-4 py-2 rounded-lg transition-colors">
                     Batal
                 </button>

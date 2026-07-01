@@ -1,5 +1,6 @@
 <div>
-    <h1 class="text-center font-semibold text-red-500 text-2xl mb-4">Ditambahkan Grafik atau Chart</h1>
+    @section('page-title', 'Laporan')
+    @section('page-description', 'Daftar laporan toko Anda')
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
         <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
             <div class="flex items-center justify-between gap-3">
@@ -29,8 +30,8 @@
                     <p class="text-sm text-gray-500">Penjualan Bulan Ini</p>
                     <p class="text-xl font-bold text-gray-900">Rp {{ number_format($penjualanBulanIni / 1000) }}k</p>
                 </div>
-                <div class="bg-amber-100 p-3 rounded-lg">
-                    <i class="fas fa-money-bill text-amber-600"></i>
+                <div class="bg-blue-100 p-3 rounded-lg">
+                    <i class="fas fa-money-bill text-blue-600"></i>
                 </div>
             </div>
         </div>

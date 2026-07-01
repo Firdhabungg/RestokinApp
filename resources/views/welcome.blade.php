@@ -2,7 +2,7 @@
 @section('title', 'Beranda')
 
 @section('content')
-    <nav class="bg-amber-500 shadow-lg fixed top-0 w-full z-50">
+    <nav class="bg-[#0190F9] shadow-lg fixed top-0 w-full z-50">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <p class="text-xl font-bold text-gray-800">Stok<span class="text-white">In</span></p>
@@ -10,7 +10,7 @@
 
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <a href="{{ route('login') }}"
-                    class="hidden md:block text-amber-600 bg-white hover:bg-gray-900 hover:text-white
+                    class="hidden md:block text-[#0190F9] bg-white hover:bg-gray-900 hover:text-white
                            focus:outline-none font-medium rounded-xl text-md px-6 py-2.5 text-center transition-all duration-300 ease-in-out shadow-lg active:scale-95">
                     Masuk
                 </a>
@@ -32,12 +32,12 @@
                 <ul
                     class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100
                            rounded-lg md:flex-row md:space-x-10 md:mt-0 md:border-0">
-                    <li><a href="#features" class="nav-link">Fitur</a></li>
-                    <li><a href="#pricing" class="nav-link">Paket</a></li>
-                    <li><a href="#contact" class="nav-link">Kontak</a></li>
+                    <li><a href="#features" class="nav-link text-white">Fitur</a></li>
+                    <li><a href="#pricing" class="nav-link text-white">Paket</a></li>
+                    <li><a href="#contact" class="nav-link text-white">Kontak</a></li>
                     <li class="md:hidden">
                         <a href="{{ route('login') }}"
-                            class="block py-2 px-3 text-white bg-amber-600 rounded-lg text-center font-medium mt-2">
+                            class="block py-2 px-3 text-white bg-[#0190F9] rounded-lg text-center font-medium mt-2">
                             Masuk
                         </a>
                     </li>
@@ -53,7 +53,7 @@
 
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-tight md:text-5xl xl:text-6xl">
                     Kelola Stok Toko dengan
-                    <span class="text-amber-600">Lebih Mudah</span>
+                    <span class="text-[#0190F9]">Lebih Mudah</span>
                 </h1>
 
                 <p class="max-w-2xl mb-6 font-light text-gray-600 md:text-lg lg:text-xl">
@@ -64,10 +64,10 @@
                 <div class="flex flex-wrap gap-4">
                     <a href="{{ route('register') }}"
                         class="inline-flex items-center justify-center px-6 py-3 text-base font-medium
-                          text-white rounded-lg bg-amber-600 hover:bg-amber-700
-                          focus:ring-4 focus:ring-amber-300
+                          text-white rounded-lg bg-[#0190F9] hover:bg-blue-700
+                          focus:ring-4 focus:ring-blue-300
                           transition-all duration-300
-                          shadow-lg shadow-amber-500/40 hover:-translate-y-0.5">
+                          shadow-lg shadow-blue-500/40 hover:-translate-y-0.5">
                         Mulai Trial Gratis
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
@@ -93,20 +93,20 @@
         <div class="max-w-screen-xl mx-auto px-4 lg:px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div data-aos="fade-up" data-aos-delay="0"
-                    class="bg-white rounded-xl border border-gray-200 p-8 text-center shadow-md card-hover card-hover-amber">
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-amber-600 mb-2">100+</h3>
+                    class="bg-white rounded-xl border border-gray-200 p-8 text-center shadow-md card-hover card-hover-blue">
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-[#0190F9] mb-2">100+</h3>
                     <p class="text-gray-600 font-medium">Pengguna Aktif</p>
                 </div>
 
                 <div data-aos="fade-up" data-aos-delay="150"
-                    class="bg-white rounded-xl border border-gray-200 p-8 text-center shadow-md card-hover card-hover-amber">
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-amber-600 mb-2">500+</h3>
+                    class="bg-white rounded-xl border border-gray-200 p-8 text-center shadow-md card-hover card-hover-blue">
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-[#0190F9] mb-2">500+</h3>
                     <p class="text-gray-600 font-medium">Transaksi per Bulan</p>
                 </div>
 
                 <div data-aos="fade-up" data-aos-delay="300"
-                    class="bg-white rounded-xl border border-gray-200 p-8 text-center shadow-md card-hover card-hover-amber">
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-amber-600 mb-2">24/7</h3>
+                    class="bg-white rounded-xl border border-gray-200 p-8 text-center shadow-md card-hover card-hover-blue">
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-[#0190F9] mb-2">24/7</h3>
                     <p class="text-gray-600 font-medium">Dukungan & Akses</p>
                 </div>
             </div>
@@ -123,7 +123,7 @@
 
                 <div data-aos="fade-left" data-aos-delay="100">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-4">
-                        Mengapa Memilih <span class="text-amber-500">StokIn</span>?
+                        Mengapa Memilih <span class="text-[#0190F9]">StokIn</span>?
                     </h2>
                     <p class="text-gray-600 mb-8 text-base md:text-lg">
                         StokIn dirancang khusus untuk membantu bisnis Anda mengelola inventaris dengan lebih efisien dan
@@ -132,8 +132,8 @@
 
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
-                                <i class="fa-solid fa-hand-pointer text-amber-500 text-xl"></i>
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fa-solid fa-hand-pointer text-[#0190F9] text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold text-gray-900 mb-1">Mudah Digunakan</h4>
@@ -142,8 +142,8 @@
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
-                                <i class="fas fa-clock text-amber-500 text-xl"></i>
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-clock text-[#0190F9] text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold text-gray-900 mb-1">Hemat Waktu</h4>
@@ -152,9 +152,8 @@
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div
-                                class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
-                                <i class="fas fa-check-double text-amber-500 text-xl"></i>
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-check-double text-[#0190F9] text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold text-gray-900 mb-1">Data Akurat</h4>
@@ -162,9 +161,8 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div
-                                class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
-                                <i class="fas fa-chart-line text-amber-500 text-xl"></i>
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-chart-line text-[#0190F9] text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-semibold text-gray-900 mb-1">Skalabilitas</h4>
@@ -189,9 +187,9 @@
             </div>
             <div data-aos="fade-up" data-aos-delay="100">
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-amber">
+                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-blue">
                         <div
-                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-amber-100 text-amber-600">
+                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-blue-100 text-[#0190F9]">
                             <i class="fas fa-boxes text-xl"></i>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">Manajemen Stok Cerdas</h3>
@@ -199,9 +197,9 @@
                             Lacak stok masuk, keluar, dan sisa secara real-time. Atur SKU dan kategori dengan mudah.
                         </p>
                     </div>
-                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-amber">
+                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-blue">
                         <div
-                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-amber-100 text-amber-600">
+                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-blue-100 text-[#0190F9]">
                             <i class="fa-solid fa-cart-shopping text-xl"></i>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">Transaksi Pembelian & Penjualan</h3>
@@ -209,9 +207,9 @@
                             Catat semua transaksi dengan cepat, update stok otomatis, dan lacak riwayat lengkap.
                         </p>
                     </div>
-                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-amber">
+                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-blue">
                         <div
-                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-amber-100 text-amber-600">
+                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-blue-100 text-[#0190F9]">
                             <i class="fa-solid fa-users text-xl"></i>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">Multi User & Role Access</h3>
@@ -219,9 +217,9 @@
                             Tambahkan tim dengan peran yang berbeda: Admin, Kasir, Staff Gudang, dan Pemilik Toko.
                         </p>
                     </div>
-                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-amber">
+                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-blue">
                         <div
-                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-amber-100 text-amber-600">
+                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-blue-100 text-[#0190F9]">
                             <i class="fa-solid fa-chart-simple text-xl"></i>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">Dashboard Real-time</h3>
@@ -229,9 +227,9 @@
                             Visualiasi data dengan grafik interaktif, monitoring performa bisnis secara langsung.
                         </p>
                     </div>
-                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-amber">
+                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-blue">
                         <div
-                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-amber-100 text-amber-600">
+                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-blue-100 text-[#0190F9]">
                             <i class="fas fa-bell text-xl"></i>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">Notifikasi Pintar</h3>
@@ -239,9 +237,9 @@
                             Peringatan stok menipis, kadaluwarsa, dan rekomendasi restock.
                         </p>
                     </div>
-                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-amber">
+                    <div class="p-6 bg-white rounded-lg shadow-lg card-hover card-hover-blue">
                         <div
-                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-amber-100 text-amber-600">
+                            class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-blue-100 text-[#0190F9]">
                             <i class="fas fa-chart-line text-xl"></i>
                         </div>
                         <h3 class="mb-2 text-xl font-bold">Laporan & Analisis</h3>
@@ -264,13 +262,13 @@
 
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div data-aos="fade-up" data-aos-delay="100"
-                    class="flex flex-col p-6 md:p-8 text-center text-gray-900 bg-white rounded-2xl border-2 border-gray-200 shadow-lg hover:border-amber-500 hover:shadow-amber-200 transition-all duration-300">
+                    class="flex flex-col p-6 md:p-8 text-center text-gray-900 bg-white rounded-2xl border-2 border-gray-200 shadow-lg hover:border-blue-500 hover:shadow-blue-200 transition-all duration-300">
                     <h3 class="mb-2 text-xl md:text-2xl font-bold text-gray-800">Free Trial</h3>
-                    <p class="text-sm text-gray-500 mb-4">Coba gratis selama 14 hari</p>
+                    <p class="text-sm text-gray-500 mb-4">Coba gratis selama 21 hari</p>
 
                     <div class="flex justify-center items-baseline my-6">
                         <span class="text-4xl md:text-5xl font-extrabold text-gray-900">Rp 0</span>
-                        <span class="ml-2 text-gray-500">/14 hari</span>
+                        <span class="ml-2 text-gray-500">/21 hari</span>
                     </div>
 
                     <ul class="mb-8 space-y-4 text-left">
@@ -313,24 +311,24 @@
                     </ul>
 
                     <a href="{{ route('register') }}?plan=free"
-                        class="mt-auto w-full py-3 px-6 text-amber-600 bg-amber-50 border-2 border-amber-500 rounded-xl font-bold hover:bg-amber-500 hover:text-white transition-all">
+                        class="mt-auto w-full py-3 px-6 text-[#0190F9] bg-blue-50 border-2 border-blue-500 rounded-xl font-bold hover:bg-[#0190F9] hover:text-white transition-all">
                         Mulai Free Trial
                     </a>
                 </div>
 
                 <div data-aos="fade-up" data-aos-delay="200"
-                    class="flex flex-col p-6 md:p-8 text-center text-white bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl hover:shadow-xl shadow-amber-200 relative overflow-hidden">
+                    class="flex flex-col p-6 md:p-8 text-center text-white bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl hover:shadow-xl shadow-blue-200 relative overflow-hidden">
 
-                    <div class="absolute top-4 right-4 bg-white text-amber-600 text-xs font-bold px-3 py-1 rounded-full">
+                    <div class="absolute top-4 right-4 bg-white text-[#0190F9] text-xs font-bold px-3 py-1 rounded-full">
                         POPULER
                     </div>
 
                     <h3 class="mb-2 text-xl md:text-2xl font-bold">Pro</h3>
-                    <p class="text-sm text-amber-100 mb-4">Untuk bisnis yang berkembang</p>
+                    <p class="text-sm text-blue-100 mb-4">Untuk bisnis yang berkembang</p>
 
                     <div class="flex justify-center items-baseline my-6">
                         <span class="text-4xl md:text-5xl font-extrabold">Rp 149K</span>
-                        <span class="ml-2 text-amber-100">/bulan</span>
+                        <span class="ml-2 text-blue-100">/bulan</span>
                     </div>
 
                     <ul class="mb-8 space-y-4 text-left">
@@ -373,7 +371,7 @@
                     </ul>
 
                     <a href="{{ route('register') }}?plan=pro"
-                        class="mt-auto w-full py-3 px-6 text-amber-600 bg-white rounded-xl font-bold hover:bg-gray-100 transition-all shadow-lg">
+                        class="mt-auto w-full py-3 px-6 text-[#0190F9] bg-white rounded-xl font-bold hover:bg-gray-100 transition-all shadow-lg">
                         Pilih Pro
                     </a>
                 </div>
@@ -392,12 +390,12 @@
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
                 <a href="{{ route('register') }}"
-                    class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-amber-600 bg-white border border-amber-500 rounded-lg focus:ring-4 focus:ring-amber-300 transition-colors hover:scale-110 hover:shadow-lg">
+                    class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-[#0190F9] bg-white border border-blue-500 rounded-lg focus:ring-4 focus:ring-blue-300 transition-colors hover:scale-110 hover:shadow-lg">
                     Mulai Trial Gratis
                     <i class="fas fa-arrow-right ml-2"></i>
                 </a>
                 <a href="#contact"
-                    class="bg-amber-600 inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white border-2 border-white rounded-lg hover:bg-amber-600 focus:ring-4 focus:ring-amber-300 transition-colors hover:scale-110">
+                    class="bg-[#0190F9] inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white border-2 border-white rounded-lg hover:bg-[#0190F9] focus:ring-4 focus:ring-blue-300 transition-colors hover:scale-110">
                     Hubungi Kami
                 </a>
             </div>
@@ -409,7 +407,7 @@
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
                     <a href="/" class="flex items-center">
-                        <img src="{{ asset('images/logo.png') }}" alt="StokIn Logo" class="h-8 md:h-36 me-3">
+                        <img src="{{ asset('images/stokin-blue.png') }}" alt="StokIn Logo" class="h-8 md:h-36 me-3">
                     </a>
                 </div>
                 <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
@@ -442,7 +440,7 @@
                                 <a href="https://wa.me/62895380187668" class="hover:underline">0895-3801-8766</a>
                             </li>
                             <li class="mb-4 flex items-center">
-                                <i class="fas fa-envelope text-amber-600 mr-2"></i>
+                                <i class="fas fa-envelope text-[#0190F9] mr-2"></i>
                                 <a href="mailto:info@stokin.com" class="hover:underline">info@stokin.com</a>
                             </li>
                         </ul>

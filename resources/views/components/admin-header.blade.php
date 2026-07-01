@@ -69,7 +69,7 @@
 
                 <div class="p-3 border-t bg-gray-50">
                     <a href="{{ route('admin.notifications.index') }}"
-                        class="block text-center text-sm text-amber-600 hover:text-amber-700 font-medium">
+                        class="block text-center text-sm text-blue-600 hover:text-blue-700 font-medium">
                         Lihat Semua Notifikasi
                     </a>
                 </div>
@@ -77,13 +77,13 @@
         </div>
 
         <a href="{{ route('admin.profil.index') }}"
-            class="flex items-center gap-3 p-1.5 pr-4 rounded-full hover:bg-amber-50 transition-colors group">
+            class="flex items-center gap-3 p-1.5 pr-4 rounded-full hover:bg-blue-50 transition-colors group">
             <div
-                class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold shadow-md group-hover:shadow-lg transition-shadow">
+                class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold shadow-md group-hover:shadow-lg transition-shadow">
                 <i class="fas fa-user text-sm"></i>
             </div>
             <div class="text-right hidden md:block">
-                <p class="text-sm font-bold group-hover:text-amber-600 transition-colors">{{ auth()->user()->name }}</p>
+                <p class="text-sm font-bold group-hover:text-blue-600 transition-colors">{{ auth()->user()->name }}</p>
                 <span class="text-xs text-gray-500">Super Admin</span>
             </div>
         </a>

@@ -6,7 +6,7 @@
 @section('content')
     {{-- Back Button --}}
     <div class="mb-4">
-        <a href="{{ route('admin.toko.index') }}" class="text-amber-600 hover:text-amber-700">
+        <a href="{{ route('admin.toko.index') }}" class="text-blue-600 hover:text-blue-700">
             <i class="fas fa-arrow-left mr-1"></i> Kembali ke Daftar Toko
         </a>
     </div>
@@ -15,8 +15,8 @@
     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
         <div class="flex items-start justify-between">
             <div class="flex items-start gap-4">
-                <div class="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-store text-amber-600 text-2xl"></i>
+                <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-store text-blue-600 text-2xl"></i>
                 </div>
                 <div class="flex-1">
                     <h2 class="text-xl font-bold text-gray-900">{{ $toko->name }}</h2>
@@ -30,7 +30,7 @@
             <form action="{{ route('admin.akses-toko.start', $toko) }}" method="POST">
                 @csrf
                 <button type="submit" 
-                    class="flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg transition-colors font-medium shadow-lg shadow-amber-200">
+                    class="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors font-medium shadow-lg shadow-blue-200">
                     <i class="fas fa-sign-in-alt"></i>
                     <span>Masuk sebagai Toko Ini</span>
                 </button>
@@ -50,7 +50,7 @@
         </div>
         <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
             <p class="text-sm text-gray-500">Total Stok</p>
-            <p class="text-2xl font-bold text-amber-600">{{ number_format($totalStok) }}</p>
+            <p class="text-2xl font-bold text-blue-600">{{ number_format($totalStok) }}</p>
         </div>
         <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
             <p class="text-sm text-gray-500">Total Penjualan</p>
@@ -66,7 +66,7 @@
                 @foreach ($toko->users as $user)
                     <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center">
+                            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                                 <i class="fas fa-user text-white"></i>
                             </div>
                             <div>
@@ -75,7 +75,7 @@
                             </div>
                         </div>
                         <span class="px-2 py-1 rounded-full text-xs font-medium
-                            @if($user->role == 'owner') bg-amber-100 text-amber-700
+                            @if($user->role == 'owner') bg-blue-100 text-blue-700
                             @else bg-gray-100 text-gray-700 @endif">
                             {{ ucfirst($user->role) }}
                         </span>

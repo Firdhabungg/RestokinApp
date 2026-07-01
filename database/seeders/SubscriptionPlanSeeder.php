@@ -14,9 +14,9 @@ class SubscriptionPlanSeeder extends Seeder
                 'name' => 'Free Trial',
                 'slug' => 'free',
                 'price' => 0,
-                'duration_days' => 14,
+                'duration_days' => 21,
                 'features' => [
-                    'description' => 'Coba gratis 14 hari',
+                    'description' => 'Coba gratis 21 hari',
                     'max_kasir' => 1, // 1 owner + 1 kasir
                     'export_report' => false,
                 ],

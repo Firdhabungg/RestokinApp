@@ -16,8 +16,12 @@ return new class extends Migration
             $table->foreignId('toko_id')->constrained('tokos')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('kode_transaksi')->unique();
-            $table->date('tanggal');
+            $table->dateTime('tanggal');
             $table->decimal('total', 15, 2)->default(0);
+            $table->decimal('uang_dibayar', 15, 2)->default(0);
+            $table->decimal('kembalian', 15, 2)->default(0);
+            $table->string('metode_pembayaran');
+            $table->string('bukti_pembayaran')->nullable();
             $table->enum('status', ['selesai', 'batal'])->default('selesai');
             $table->text('keterangan')->nullable();
             $table->timestamps();

@@ -57,7 +57,7 @@ class Barangs extends Component
         $barang = Barang::where('toko_id', Auth::user()->effective_toko_id)
             ->findOrFail($id);
         $barang->delete();
-        session()->flash('success', 'Barang berhasil dihapus.');
+        $this->js("Swal.fire({title: 'Berhasil!', text: 'Barang berhasil dihapus.', icon: 'success', timer: 3000, showConfirmButton: false})");
     }
 
     public function render()

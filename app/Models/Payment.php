@@ -80,7 +80,7 @@ class Payment extends Model
             return 'emerald';
         }
         if ($this->status === 'pending') {
-            return $this->isOverdue() ? 'rose' : 'amber';
+            return $this->isOverdue() ? 'rose' : 'blue';
         }
         return 'gray';
     }

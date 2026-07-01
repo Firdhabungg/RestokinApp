@@ -8,7 +8,7 @@
     <div class="max-w-4xl mx-auto space-y-6">
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
             <div class="flex items-center gap-6">
-                <div class="w-20 h-20 bg-amber-500 rounded-full flex items-center justify-center">
+                <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center">
                     <i class="fas fa-user text-white text-2xl"></i>
                 </div>
                 <div>
@@ -16,14 +16,12 @@
                     <p class="text-gray-500">{{ auth()->user()->email }}</p>
                     <span
                         class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium 
-                        @if(auth()->user()->isSuperAdmin())
-                            bg-purple-100 text-purple-800
+                        @if (auth()->user()->isSuperAdmin()) bg-purple-100 text-purple-800
                         @elseif(auth()->user()->isOwner())
-                            bg-amber-100 text-amber-800
-                        @else
                             bg-blue-100 text-blue-800
-                        @endif">
-                        @if(auth()->user()->isSuperAdmin())
+                        @else
+                            bg-blue-100 text-blue-800 @endif">
+                        @if (auth()->user()->isSuperAdmin())
                             Super Admin
                         @elseif(auth()->user()->isOwner())
                             Owner
@@ -39,7 +37,7 @@
             <div class="flex items-center justify-between mb-6">
                 <h3 class="text-lg font-semibold text-gray-900">Informasi Profil</h3>
                 <button onclick="editProfile()"
-                    class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
                     <i class="fas fa-edit mr-2"></i>Edit Profil
                 </button>
             </div>
@@ -68,7 +66,7 @@
 
                 @if (auth()->user()->isOwner())
                     <button onclick="editToko()"
-                        class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
                         <i class="fas fa-edit mr-2"></i>Edit Toko
                     </button>
                 @endif
@@ -127,7 +125,7 @@
                     <h4 class="font-medium text-gray-900">Ubah Password</h4>
                     <p class="text-sm text-gray-500">Perbarui password untuk keamanan akun</p>
                 </div>
-                <button onclick="changePassword()" class="text-amber-600 hover:text-amber-700 font-medium">
+                <button onclick="changePassword()" class="text-blue-600 hover:text-blue-700 font-medium">
                     <i class="fas fa-key mr-2"></i>Ubah Password
                 </button>
             </div>
@@ -165,26 +163,27 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     fetch("{{ route('profil.update') }}", {
-                        method: 'PUT',
-                        headers: {
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(result.value)
-                    })
-                    .then(res => {
-                        if (!res.ok) throw res;
-                        return res.json();
-                    })
-                    .then(() => {
-                        Swal.fire('Berhasil', 'Profil berhasil diperbarui', 'success')
-                            .then(() => location.reload());
-                    })
-                    .catch((err) => {
-                        err.json().then(data => {
-                            Swal.fire('Gagal', data.message || 'Tidak dapat menyimpan data', 'error');
+                            method: 'PUT',
+                            headers: {
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(result.value)
+                        })
+                        .then(res => {
+                            if (!res.ok) throw res;
+                            return res.json();
+                        })
+                        .then(() => {
+                            Swal.fire('Berhasil', 'Profil berhasil diperbarui', 'success')
+                                .then(() => location.reload());
+                        })
+                        .catch((err) => {
+                            err.json().then(data => {
+                                Swal.fire('Gagal', data.message || 'Tidak dapat menyimpan data',
+                                    'error');
+                            });
                         });
-                    });
                 }
             });
         }
@@ -278,12 +277,12 @@
                 preConfirm: () => {
                     const password = document.getElementById('password').value;
                     const confirmation = document.getElementById('password_confirmation').value;
-                    
+
                     if (password !== confirmation) {
                         Swal.showValidationMessage('Konfirmasi password tidak cocok');
                         return false;
                     }
-                    
+
                     return {
                         current_password: document.getElementById('current_password').value,
                         password: password,
@@ -293,25 +292,26 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     fetch("{{ route('profil.password.update') }}", {
-                        method: 'PUT',
-                        headers: {
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(result.value)
-                    })
-                    .then(res => {
-                        if (!res.ok) throw res;
-                        return res.json();
-                    })
-                    .then(() => {
-                        Swal.fire('Berhasil', 'Password berhasil diubah', 'success');
-                    })
-                    .catch((err) => {
-                        err.json().then(data => {
-                            Swal.fire('Gagal', data.message || 'Tidak dapat mengubah password', 'error');
+                            method: 'PUT',
+                            headers: {
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(result.value)
+                        })
+                        .then(res => {
+                            if (!res.ok) throw res;
+                            return res.json();
+                        })
+                        .then(() => {
+                            Swal.fire('Berhasil', 'Password berhasil diubah', 'success');
+                        })
+                        .catch((err) => {
+                            err.json().then(data => {
+                                Swal.fire('Gagal', data.message || 'Tidak dapat mengubah password',
+                                    'error');
+                            });
                         });
-                    });
                 }
             });
         }

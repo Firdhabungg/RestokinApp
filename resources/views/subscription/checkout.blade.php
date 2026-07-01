@@ -7,8 +7,8 @@
 <div class="max-w-2xl mx-auto">
     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
         <div class="text-center mb-6">
-            <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="fas fa-credit-card text-amber-600 text-2xl"></i>
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-credit-card text-blue-600 text-2xl"></i>
             </div>
             <h2 class="text-2xl font-bold text-gray-900">Pembayaran Langganan</h2>
             <p class="text-gray-500">Selesaikan pembayaran untuk mengaktifkan paket</p>
@@ -29,14 +29,14 @@
                 <hr class="my-2">
                 <div class="flex justify-between text-lg">
                     <span class="font-semibold">Total</span>
-                    <span class="font-bold text-amber-600">{{ $plan->formatted_price }}</span>
+                    <span class="font-bold text-blue-600">{{ $plan->formatted_price }}</span>
                 </div>
             </div>
         </div>
 
         {{-- Pay Button --}}
         <button id="pay-button" 
-            class="w-full py-4 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-bold text-lg transition-colors">
+            class="w-full py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-bold text-lg transition-colors">
             <i class="fas fa-lock mr-2"></i>Bayar Sekarang
         </button>
 

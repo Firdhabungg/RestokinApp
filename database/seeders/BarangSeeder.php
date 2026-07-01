@@ -69,7 +69,7 @@ class BarangSeeder extends Seeder
                 'kategori_id' => $kategori->kategori_id,
                 'nama_barang' => $item['nama'],
                 'kode_barang' => $kodeBarang,
-                'harga'       => $item['harga'],
+                'harga_pokok'       => $item['harga'],
                 'harga_jual'  => $hargaJual,
                 'stok'        => 0,
                 'status'      => 'habis',

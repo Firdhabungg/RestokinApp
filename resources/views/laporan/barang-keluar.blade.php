@@ -19,7 +19,7 @@
                     <input type="date" name="sampai" value="{{ $sampai }}"
                         class="border border-gray-300 rounded-lg px-4 py-2">
                 </div>
-                <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
                     <i class="fas fa-filter mr-1"></i> Filter
                 </button>
             </form>
@@ -41,14 +41,14 @@
                         class="inline-flex items-center px-4 py-2 bg-gray-300 text-gray-500 rounded-lg font-medium cursor-not-allowed">
                         <i class="fas fa-lock mr-2"></i> Export (Pro)
                     </button>
-                    <a href="{{ route('subscription.index') }}" class="text-sm text-amber-600 hover:underline">Upgrade →</a>
+                    <a href="{{ route('subscription.index') }}" class="text-sm text-blue-600 hover:underline">Upgrade →</a>
                 </div>
             @endif
         </div>
     </div>
 
     <div class="my-2">
-        <a href="{{ route('laporan.index') }}" class="text-black hover:text-amber-600">
+        <a href="{{ route('laporan.index') }}" class="text-black hover:text-blue-600">
             <i class="fa-solid fa-circle-arrow-left text-lg mr-1"></i><span class="underline">Kembali</span>
         </a>
     </div>

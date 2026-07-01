@@ -40,7 +40,7 @@
                 ],
                 [
                     'icon' => 'store',
-                    'color' => 'amber',
+                    'color' => 'blue',
                     'title' => 'Total Toko',
                     'value' => $totalToko,
                 ],
@@ -110,7 +110,7 @@
                         @php
                             $labelLower = strtolower($label);
                             if (str_contains($labelLower, 'pro') || str_contains($labelLower, 'active')) {
-                                $dotColor = '#f59e0b'; // amber-500
+                                $dotColor = '#f59e0b';
                             } elseif (str_contains($labelLower, 'trial')) {
                                 $dotColor = '#10b981'; // emerald-500
                             } else {
@@ -143,11 +143,11 @@
             <div class="p-6 space-y-4 text-sm">
 
                 <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+                    <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
                         <i class="fas fa-clock"></i>
                     </div>
                     <p class="text-gray-700">
-                        <b>{{ $tokoTidakAktif }}</b> toko tidak aktif ≥ 14 hari
+                        <b>{{ $tokoTidakAktif }}</b> toko tidak aktif ≥ 21 hari
                     </p>
                 </div>
 

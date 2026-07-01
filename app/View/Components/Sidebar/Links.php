@@ -20,7 +20,7 @@ class Links extends Component
             $this->active = 'text-gray-600';
         } else {
             $basePath = $this->generatePath($route);
-            $this->active = request()->routeIs($basePath) ? 'bg-amber-500 text-white font-medium' : 'text-gray-600 hover:bg-amber-50 hover:text-amber-600';
+            $this->active = request()->routeIs($basePath) ? 'bg-blue-500 text-white font-medium' : 'text-gray-600 hover:bg-blue-50 hover:text-blue-600';
         }
     }
 

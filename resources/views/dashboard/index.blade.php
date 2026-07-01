@@ -51,7 +51,7 @@
                     <p class="text-sm text-gray-200">Prioritas penjualan</p>
                 </div>
                 <a href="{{ route('stock.batch.index') }}"
-                    class="text-black hover:text-black text-sm font-medium bg-amber-200 px-3 py-1 rounded-lg">
+                    class="text-black hover:text-black text-sm font-medium bg-blue-200 px-3 py-1 rounded-lg">
                     Lihat Semua
                 </a>
             </div>
@@ -81,7 +81,7 @@
             </div>
         </div>
 
-        <div class="bg-green-500 rounded-xl p-6 shadow-sm border border-gray-100">
+        <div class="bg-blue-500 rounded-xl p-6 shadow-sm border border-gray-100">
             <div class="flex items-center justify-between mb-4">
                 <div>
                     <h3 class="font-semibold text-white">Rekomendasi Stok</h3>

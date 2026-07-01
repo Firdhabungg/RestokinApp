@@ -3,13 +3,13 @@
         <label for="query" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
         <div class="relative">
             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <i class="fas fa-search text-amber-500 text-lg"></i>
+                <i class="fas fa-search text-blue-500 text-lg"></i>
             </div>
             <input wire:model.live="query" type="search" id="query"
-                class="w-full pl-12 pr-12 py-2 bg-white border-2 border-amber-200/50 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-4 focus:ring-amber-100 transition-all duration-300 text-base shadow-sm"
+                class="w-full pl-12 pr-12 py-2 bg-white border-2 border-blue-200/50 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-100 transition-all duration-300 text-base shadow-sm"
                 placeholder="Cari kategori..." />
             <button wire:click="search"
-                class="absolute end-1.5 bottom-1.5 text-white bg-amber-500 hover:bg-amber-600 box-border border border-transparent focus:ring-4 focus:ring-amber-100 shadow-xs font-medium leading-5 rounded text-xs px-3 py-1 focus:outline-none flex items-center gap-1">
+                class="absolute end-1.5 bottom-1.5 text-white bg-blue-500 hover:bg-blue-600 box-border border border-transparent focus:ring-4 focus:ring-blue-100 shadow-xs font-medium leading-5 rounded text-xs px-3 py-1 focus:outline-none flex items-center gap-1">
                 <svg wire:loading wire:target="search" aria-hidden="true"
                     class="w-4 h-4 text-neutral-quaternary animate-spin fill-brand" viewBox="0 0 100 101" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -30,8 +30,8 @@
             <div class="bg-white rounded-xl p-4 shadow-sm group">
                 <div class="flex items-center justify-between mb-2">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-tags text-amber-600"></i>
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-tags text-blue-600"></i>
                         </div>
                         <div>
                             <h3 class="font-semibold">{{ $kategori->nama_kategori }}</h3>
@@ -46,7 +46,7 @@
                         </a>
 
                         <button wire:click="editKategori({{ $kategori->kategori_id }})"
-                            class="text-gray-400 hover:text-amber-500 transition-colors">
+                            class="text-gray-400 hover:text-blue-500 transition-colors">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
 
@@ -59,7 +59,7 @@
                 </div>
 
                 @if ($kategori->deskripsi_kategori)
-                    <p class="text-xs text-gray-500 mt-2">{{ $kategori->deskripsi_kategori }}</p>
+                    <p class="text-xs text-gray-500 mt-2">{{ Str::limit($kategori->deskripsi_kategori, 50) }}</p>
                 @endif
             </div>
         @empty

@@ -36,7 +36,7 @@
 
     <div class="relative overflow-x-auto shadow-sm rounded-xl border border-gray-200">
         <table class="w-full text-sm text-left text-gray-600">
-            <thead class="bg-amber-400 border-b border-gray-200">
+            <thead class="bg-blue-400 border-b border-gray-200">
                 <tr>
                     <th class="px-6 py-3 font-semibold text-gray-700">Tanggal</th>
                     <th class="px-6 py-3 font-semibold text-gray-700">Barang</th>
@@ -48,7 +48,7 @@
             </thead>
             <tbody>
                 @forelse ($stockOuts as $stockOut)
-                    <tr class="bg-white border-b border-gray-100 hover:bg-amber-50 transition-colors duration-150"">
+                    <tr class="bg-white border-b border-gray-100 hover:bg-blue-50 transition-colors duration-150"">
                         <td class="px-6 py-4">{{ $stockOut->tgl_keluar->format('d M Y') }}</td>
                         <td class="px-6 py-4 font-medium text-gray-900">{{ $stockOut->barang->nama_barang }}</td>
                         <td class="px-6 py-4">

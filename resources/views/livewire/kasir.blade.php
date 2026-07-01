@@ -4,7 +4,7 @@
             <h2 class="text-xl sm:text-2xl font-bold text-gray-900">Daftar Kasir</h2>
             <p class="text-gray-500 mt-1 text-sm sm:text-base">Manajemen akun kasir untuk operasional penjualan</p>
             @if ($maxKasir != -1)
-                <p class="text-sm text-amber-600 mt-1">
+                <p class="text-sm text-blue-600 mt-1">
                     <i class="fas fa-users mr-1"></i>
                     Kuota kasir: {{ $kasirs->count() }}/{{ $maxKasir }}
                     ({{ $remainingSlots }} slot tersisa)
@@ -13,7 +13,7 @@
         </div>
         @if ($canAddUser)
             <a href="{{ route('kasir.create') }}"
-                class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3 sm:px-5 py-2.5 rounded-xl font-medium transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto">
+                class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-3 sm:px-5 py-2.5 rounded-xl font-medium transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto">
                 <i class="fas fa-plus"></i>
                 <span>Tambah Kasir</span>
             </a>
@@ -23,7 +23,7 @@
                     class="bg-gray-300 text-gray-500 px-4 py-2 rounded-lg font-medium cursor-not-allowed w-full sm:w-auto">
                     <i class="fas fa-lock mr-2"></i>Batas Tercapai
                 </button>
-                <a href="{{ route('subscription.index') }}" class="block text-sm text-amber-600 hover:underline mt-1">
+                <a href="{{ route('subscription.index') }}" class="block text-sm text-blue-600 hover:underline mt-1">
                     Upgrade paket →
                 </a>
             </div>
@@ -33,16 +33,16 @@
     <div class="bg-white rounded-2xl shadow-sm p-3 mb-3">
         <div class="relative">
             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <i class="fas fa-search text-amber-500 text-lg"></i>
+                <i class="fas fa-search text-blue-500 text-lg"></i>
             </div>
             <input type="text" wire:model.debounce.300ms.live="search" placeholder="Cari kasir...."
-                class="w-full pl-12 pr-4 py-2 bg-white border-2 border-amber-200/50 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-4 focus:ring-amber-100 transition-all duration-300 text-base shadow-sm">
+                class="w-full pl-12 pr-4 py-2 bg-white border-2 border-blue-200/50 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-100 transition-all duration-300 text-base shadow-sm">
         </div>
     </div>
 
     <div class="relative overflow-x-auto shadow-sm rounded-xl border border-gray-200">
         <table class="w-full text-sm text-left text-gray-600">
-            <thead class="bg-amber-400 border-b border-gray-200">
+            <thead class="bg-blue-400 border-b border-gray-200">
                 <tr>
                     <th class="px-6 py-3 font-semibold text-gray-700">Nama</th>
                     <th class="px-6 py-3 font-semibold text-gray-700">Email</th>

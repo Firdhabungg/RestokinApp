@@ -12,7 +12,7 @@
                         {{ $loop->first ? 'rounded-s-lg' : '' }}
                         {{ $loop->last ? 'rounded-e-lg' : '' }}
                         {{ $period === $val
-                            ? 'bg-orange-500 text-white border-orange-500'
+                            ? 'bg-blue-500 text-white border-blue-500'
                             : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50' }}">
                     {{ $label }}
                 </button>

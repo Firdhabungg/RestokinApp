@@ -13,11 +13,11 @@
 
     <div class="h-20 flex items-center justify-between px-4 flex-shrink-1 border-b border-slate-50">
         <div id="logo-desktop" class="flex items-center gap-3">
-            <div class="bg-amber-500 p-2 rounded shadow-xl shadow-amber-200 flex-shrink-0">
+            <div class="bg-blue-500 p-2 rounded shadow-xl shadow-blue-200 flex-shrink-0">
                 <i class="fa-solid fa-box text-white w-5 h-5 flex items-center justify-center"></i>
             </div>
             <span id="logo-text" class="nav-text text-xl font-bold tracking-tight text-slate-200 whitespace-nowrap">
-                Stok<span class="text-amber-500">In</span>
+                Stok<span class="text-blue-500">In</span>
             </span>
         </div>
 
@@ -61,7 +61,7 @@
                     </li>
 
                     <li>
-                        <x-sidebar.links title="Penjualan" icon="fas fa-cash-register" route="penjualan.index"
+                        <x-sidebar.links title="Point of Sale (POS)" icon="fas fa-cash-register" route="penjualan.index"
                             class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-semibold" />
                     </li>
 
@@ -97,7 +97,7 @@
                         </div>
                     </li>
                     <li class="mt-4">
-                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-700">
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-xs text-blue-700">
                             <i class="fas fa-info-circle mr-1"></i>
                             Pilih paket langganan untuk mengakses fitur
                         </div>

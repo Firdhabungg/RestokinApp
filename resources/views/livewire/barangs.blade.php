@@ -1,10 +1,24 @@
 <div>
+    @section('page-title', 'Data Barang')
+    @section('page-description', 'Kelola Data barang toko Anda')
     <div class="mb-3">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <h2 class="text-xl sm:text-2xl font-bold text-gray-900">Data Barang</h2>
+        @if (session()->has('swal_success'))
+            @script
+                <script>
+                    Swal.fire({
+                        title: 'Berhasil!',
+                        text: '{{ session('swal_success') }}',
+                        icon: 'success',
+                        timer: 3000,
+                        showConfirmButton: false
+                    });
+                </script>
+            @endscript
+        @endif
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4">
             @if (auth()->user()->canManageToko())
                 <a href="{{ route('barang.create') }}"
-                    class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white p-2 sm:px-5 rounded-xl font-medium transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto">
+                    class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-2 sm:px-5 rounded-xl font-medium transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto">
                     <i class="fas fa-plus"></i>
                     <span>Tambah Barang</span>
                 </a>
@@ -16,13 +30,13 @@
             <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
             <div class="relative">
                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <i class="fas fa-search text-amber-500 text-lg"></i>
+                    <i class="fas fa-search text-blue-500 text-lg"></i>
                 </div>
                 <input wire:model.live.debounce.250ms="search" type="search" id="search"
-                    class="w-full pl-12 pr-12 py-2 bg-white border-2 border-amber-200/50 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-4 focus:ring-amber-100 transition-all duration-300 text-base shadow-sm"
+                    class="w-full pl-12 pr-12 py-2 bg-white border-2 border-blue-200/50 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-100 transition-all duration-300 text-base shadow-sm"
                     placeholder="Cari barang..." />
                 <button type="submit"
-                    class="absolute end-1.5 bottom-1.5 text-white bg-amber-500 hover:bg-amber-600 box-border border border-transparent focus:ring-4 focus:ring-amber-100 shadow-xs font-medium leading-5 rounded text-xs px-3 py-1 focus:outline-none">Search</button>
+                    class="absolute end-1.5 bottom-1.5 text-white bg-blue-500 hover:bg-blue-600 box-border border border-transparent focus:ring-4 focus:ring-blue-100 shadow-xs font-medium leading-5 rounded text-xs px-3 py-1 focus:outline-none">Search</button>
             </div>
         </form>
 
@@ -45,7 +59,7 @@
 
     <div class="relative overflow-x-auto shadow-sm rounded-xl border border-gray-200">
         <table class="w-full text-sm text-left text-gray-600">
-            <thead class="bg-amber-400 border-b border-gray-200">
+            <thead class="bg-blue-400 border-b border-gray-200">
                 <tr>
                     <th class="px-6 py-3 font-semibold text-gray-700">Kode Barang</th>
                     <th class="px-6 py-3 font-semibold text-gray-700">Nama Barang</th>
@@ -58,7 +72,7 @@
             </thead>
             <tbody>
                 @forelse($barangs as $barang)
-                    <tr class="bg-white border-b border-gray-100 hover:bg-amber-50 transition-colors duration-150">
+                    <tr class="bg-white border-b border-gray-100 hover:bg-blue-50 transition-colors duration-150">
                         <td class="px-6 py-4 text-gray-500">{{ $barang->kode_barang }}</td>
                         <td class="px-6 py-4 font-medium text-gray-900">{{ $barang->nama_barang }}</td>
                         <td class="px-6 py-4">{{ $barang->kategori->nama_kategori ?? '-' }}</td>
@@ -80,7 +94,7 @@
                             <td class="px-6 py-4">
                                 <div class="flex items-center gap-2 text-white">
                                     <a href="{{ route('barang.edit', $barang->id) }}"
-                                        class="bg-amber-400 hover:bg-amber-500 px-4 py-1 rounded-full font-medium text-xs">Edit</a>
+                                        class="bg-blue-400 hover:bg-blue-500 px-4 py-1 rounded-full font-medium text-xs">Edit</a>
                                     <button
                                         class="bg-red-500 hover:bg-red-700 px-4 py-1 rounded-full font-medium text-xs"
                                         wire:click="triggerDelete({{ $barang->id }}, {{ Js::from($barang->nama_barang) }})">
@@ -92,8 +106,8 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="7" class="text-center text-gray-400 my-6">
-                            <i class="fas fa-box-open text-4xl my-6"></i>
+                        <td colspan="7" class="text-center text-gray-400 py-6">
+                            <i class="fas fa-box-open text-4xl"></i>
                             <p>Barang tidak ditemukan</p>
                         </td>
                     </tr>

@@ -132,7 +132,7 @@
 
             <div class="flex gap-3 justify-between items-center">
                 <a href="{{ route('penjualan.index') }}"
-                    class="px-6 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg">
+                    class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">
                     <i class="fas fa-arrow-left mr-2"></i>Kembali
                 </a>
 

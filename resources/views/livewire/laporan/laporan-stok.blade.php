@@ -1,6 +1,8 @@
 <div>
+    @section('page-title', 'Laporan Stok Barang')
+    @section('page-description', 'Ringkasan kondisi stok dan ketersediaan inventaris')
     <div class="flex justify-between items-center gap-2 mb-2">
-        <a href="{{ route('laporan.index') }}" class="text-black bg-amber-400 hover:text-light rounded-xl px-3 py-1">
+        <a href="{{ route('laporan.index') }}" class="text-black bg-blue-400 hover:text-light rounded-xl px-3 py-1">
             <i class="fa-solid fa-circle-arrow-left text-sm mr-1"></i><span class="text-sm">Kembali</span>
         </a>
 
@@ -22,7 +24,7 @@
                         class="inline-flex items-center px-4 py-2 bg-gray-300 text-gray-500 rounded-lg font-medium cursor-not-allowed">
                         <i class="fas fa-lock mr-2"></i> Export (Pro)
                     </button>
-                    <a href="{{ route('subscription.index') }}" class="text-sm text-amber-600 hover:underline">
+                    <a href="{{ route('subscription.index') }}" class="text-sm text-blue-600 hover:underline">
                         Upgrade →
                     </a>
                 </div>

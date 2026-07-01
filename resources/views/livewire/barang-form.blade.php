@@ -1,10 +1,4 @@
 <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-    @if (session('success'))
-        <div class="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-xl mb-4">
-            {{ session('success') }}
-        </div>
-    @endif
-
     <div class="mb-6">
         <h2 class="text-xl font-semibold text-gray-900">{{ $isEdit ? 'Form Edit Barang' : 'Form Tambah Barang' }}</h2>
         <p class="text-gray-500 text-sm mt-1">
@@ -26,7 +20,7 @@
             <label class="block text-sm font-medium text-gray-700 mb-1">Nama Barang <span
                     class="text-red-500">*</span></label>
             <input type="text" wire:model.lazy="nama_barang" placeholder="Indomie Goreng Sedap"
-                class="w-full px-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm @error('nama_barang') border-red-400 @enderror">
+                class="w-full px-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm @error('nama_barang') border-red-400 @enderror">
             @error('nama_barang')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
             @enderror
@@ -36,7 +30,7 @@
             <label class="block text-sm font-medium text-gray-700 mb-1">Kategori <span
                     class="text-red-500">*</span></label>
             <select wire:model.lazy="kategori_id"
-                class="w-full px-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm @error('kategori_id') border-red-400 @enderror">
+                class="w-full px-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm @error('kategori_id') border-red-400 @enderror">
                 <option value="">Pilih Kategori</option>
                 @foreach ($kategoris as $kategori)
                     <option value="{{ $kategori->kategori_id }}">{{ $kategori->nama_kategori }}</option>
@@ -49,12 +43,12 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Harga Beli <span
+                <label class="block text-sm font-medium text-gray-700 mb-1">Harga Pokok<span
                         class="text-red-500">*</span></label>
                 <div class="relative">
                     <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400 text-sm">Rp</span>
                     <input type="number" wire:model.lazy="harga" placeholder="0"
-                        class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm @error('harga') border-red-400 @enderror">
+                        class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm @error('harga') border-red-400 @enderror">
                 </div>
                 @error('harga')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -67,7 +61,7 @@
                 <div class="relative">
                     <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400 text-sm">Rp</span>
                     <input type="number" wire:model.lazy="harga_jual" placeholder="0"
-                        class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm @error('harga_jual') border-red-400 @enderror">
+                        class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm @error('harga_jual') border-red-400 @enderror">
                 </div>
                 @error('harga_jual')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -77,7 +71,7 @@
 
         <div class="flex justify-end gap-3 pt-2">
             <button type="submit"
-                class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-6 py-2.5 rounded-xl font-medium transition-all duration-300 shadow-lg shadow-amber-500/25 text-sm flex items-center gap-2">
+                class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-2.5 rounded-xl font-medium transition-all duration-300 shadow-lg shadow-blue-500/25 text-sm flex items-center gap-2">
                 <svg wire:loading wire:target="save" aria-hidden="true"
                     class="w-4 h-4 text-neutral-quaternary animate-spin fill-brand" viewBox="0 0 100 101" fill="none"
                     xmlns="http://www.w3.org/2000/svg">

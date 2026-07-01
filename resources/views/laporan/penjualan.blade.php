@@ -2,7 +2,7 @@
 
 @section('title', 'Laporan Penjualan')
 @section('page-title', 'Laporan Penjualan')
-@section('page-description', 'Ringkasan kondisi stok dan ketersediaan inventaris')
+@section('page-description', 'Ringkasan transaksi dan performa penjualan')
 
 @section('content')
     <div>

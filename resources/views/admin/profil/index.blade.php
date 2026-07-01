@@ -8,13 +8,13 @@
         
         <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <div class="flex items-center gap-6">
-                <div class="w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center shadow-lg shadow-amber-200">
+                <div class="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200">
                     <i class="fas fa-user text-white text-3xl font-bold"></i>
                 </div>
                 <div>
                     <h2 class="text-2xl font-bold text-gray-900">{{ $user->name }}</h2>
                     <p class="text-gray-500">{{ $user->email }}</p>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-700 mt-2">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700 mt-2">
                         <i class="fas fa-shield-halved mr-1.5"></i>
                         Super Admin
                     </span>
@@ -30,7 +30,7 @@
                     <p class="text-sm text-gray-500">Perbarui nama dan email akun Anda</p>
                 </div>
                 <button onclick="editProfile()"
-                    class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2.5 rounded-xl font-medium transition-all shadow-sm hover:shadow-md active:scale-95">
+                    class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2.5 rounded-xl font-medium transition-all shadow-sm hover:shadow-md active:scale-95">
                     <i class="fas fa-edit mr-2"></i>Edit Profil
                 </button>
             </div>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <button onclick="changePassword()" 
-                    class="text-amber-600 hover:text-amber-700 font-medium hover:bg-amber-50 px-4 py-2 rounded-lg transition-colors">
+                    class="text-blue-600 hover:text-blue-700 font-medium hover:bg-blue-50 px-4 py-2 rounded-lg transition-colors">
                     <i class="fas fa-pen mr-2"></i>Ubah Password
                 </button>
             </div>
@@ -98,12 +98,12 @@
                 <div class="text-left space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
-                        <input id="edit_name" type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500" 
+                        <input id="edit_name" type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
                             value="{{ $user->name }}">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                        <input id="edit_email" type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500" 
+                        <input id="edit_email" type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
                             value="{{ $user->email }}">
                     </div>
                 </div>
@@ -183,17 +183,17 @@
                 <div class="text-left space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Password Lama</label>
-                        <input id="current_password" type="password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500" 
+                        <input id="current_password" type="password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
                             placeholder="Masukkan password lama">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Password Baru</label>
-                        <input id="new_password" type="password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500" 
+                        <input id="new_password" type="password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
                             placeholder="Minimal 8 karakter">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Konfirmasi Password Baru</label>
-                        <input id="confirm_password" type="password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500" 
+                        <input id="confirm_password" type="password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
                             placeholder="Ulangi password baru">
                     </div>
                 </div>

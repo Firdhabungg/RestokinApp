@@ -45,11 +45,11 @@
             <!-- Header -->
             <div class="h-20 flex items-center justify-between px-4 border-b border-slate-50">
                 <div class="flex items-center gap-3">
-                    <div class="bg-amber-500 p-2 rounded-xl shadow-lg shadow-amber-200">
+                    <div class="bg-blue-500 p-2 rounded-xl shadow-lg shadow-blue-200">
                         <i class="fa-solid fa-box text-white"></i>
                     </div>
                     <span class="nav-text text-xl font-bold text-slate-800">
-                        Stok<span class="text-amber-500">In</span>
+                        Stok<span class="text-blue-500">In</span>
                     </span>
                 </div>
 
@@ -61,7 +61,7 @@
                 </button>
 
                 <!-- Close Mobile -->
-                <button @click="mobileOpen = false" class="md:hidden p-2 text-gray-500 hover:text-amber-500">
+                <button @click="mobileOpen = false" class="md:hidden p-2 text-gray-500 hover:text-blue-500">
                     <i class="fas fa-times text-xl"></i>
                 </button>
             </div>

@@ -16,9 +16,9 @@
             </p>
 
             {{-- Benefits --}}
-            <div class="bg-amber-50 rounded-lg p-4 mb-6 text-left">
-                <p class="font-semibold text-amber-700 mb-2">Dengan paket Pro, Anda mendapatkan:</p>
-                <ul class="space-y-2 text-sm text-amber-700">
+            <div class="bg-blue-50 rounded-lg p-4 mb-6 text-left">
+                <p class="font-semibold text-blue-700 mb-2">Dengan paket Pro, Anda mendapatkan:</p>
+                <ul class="space-y-2 text-sm text-blue-700">
                     <li class="flex items-center gap-2">
                         <i class="fas fa-check-circle"></i>
                         <span>Produk & Transaksi Unlimited</span>
@@ -42,7 +42,7 @@
             <div class="space-y-3 mb-6">
                 @foreach($plans as $plan)
                     <a href="{{ route('subscription.checkout', $plan->slug) }}" 
-                        class="block w-full py-4 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-bold transition-colors">
+                        class="block w-full py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-bold transition-colors">
                         Pilih {{ $plan->name }} - {{ $plan->formatted_price }}/bulan
                     </a>
                 @endforeach

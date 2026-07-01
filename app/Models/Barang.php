@@ -55,9 +55,4 @@ class Barang extends Model
         return $this->hasMany(StockOut::class);
     }
 
-    // hitung total stok dari stock batches
-    public function getTotalStockAttribute(): int
-    {
-        return $this->stockBatches()->sum('jumlah_sisa');
-    }
 }
