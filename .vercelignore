@@ -1,1 +1,13 @@
 /vendor
+/node_modules
+/.env
+/bootstrap/cache/*.php
+/bootstrap/cache/*.tmp
+/storage/*.key
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/storage/logs/*
+.phpunit.cache
+.phpunit.result.cache
