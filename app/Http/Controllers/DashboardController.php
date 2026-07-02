@@ -106,7 +106,7 @@ class DashboardController extends Controller
             'kadaluarsa' => StockBatch::where('toko_id', $tokoId)->where('status', 'kadaluarsa')->where('jumlah_sisa', '>', 0)->count(),
         ];
 
-        $shortText = Str::limit($listBatchKadaluarsa->first()->barang->nama_barang ?? '', 20, '...');
+        $shortText = Str::limit($listBatchKadaluarsa->first()?->barang->nama_barang ?? '', 20, '...');
 
         return view('dashboard.index', compact(
             'totalStok',
