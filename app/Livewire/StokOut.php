@@ -33,7 +33,9 @@ class StokOut extends Component
             ->where('toko_id', $tokoId)
             ->when($this->search, function ($query) {
                 $query->where(function ($q) {
-                    $q->where('alasan', 'like', '%' . $this->search . '%')
+                    $alasanEnums = ['penjualan', 'rusak', 'kadaluarsa', 'retur', 'hilang', 'sample', 'lainnya'];
+                    $matchedAlasan = array_filter($alasanEnums, fn($a) => str_contains(strtolower($a), strtolower($this->search)));
+                    $q->whereIn('alasan', $matchedAlasan)
                         ->orWhereHas('barang', function ($q) {
                             $q->where('kode_barang', 'like', '%' . $this->search . '%')
                                 ->orWhere('nama_barang', 'like', '%' . $this->search . '%');
