@@ -79,9 +79,7 @@ class NotificationService
             ->where('toko_id', $tokoId)
             ->where('status', 'kadaluarsa')
             ->where('jumlah_sisa', '>', 0)
-            ->whereHas('barang', function ($q) {
-                $q->where('status', 'aktif');
-            })
+            ->has('barang')
             ->get();
 
         foreach ($kadaluarsa as $batch) {
@@ -101,9 +99,7 @@ class NotificationService
             ->where('toko_id', $tokoId)
             ->where('status', 'hampir_kadaluarsa')
             ->where('jumlah_sisa', '>', 0)
-            ->whereHas('barang', function ($q) {
-                $q->where('status', 'aktif');
-            })
+            ->has('barang')
             ->get()
             ->map(function ($batch) {
                 $daysLeft = round(now()->diffInDays($batch->tgl_kadaluarsa, false));
