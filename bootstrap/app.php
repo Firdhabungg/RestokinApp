@@ -28,25 +28,23 @@ $app = Application::configure(basePath: dirname(__DIR__))
         // Override render() di sini supaya SELALU balas JSON mentah dulu,
         // biar kita bisa lihat root cause-nya tanpa lewat Blade.
         $exceptions->render(function (\Throwable $e, $request) {
-            if (config('app.debug')) {
-                error_log("VERCEL ERROR: " . $e->getMessage() . " in " . $e->getFile() . ":" . $e->getLine());
-                return response()->json([
-                    'exception' => get_class($e),
-                    'message'   => $e->getMessage(),
-                    'file'      => $e->getFile(),
-                    'line'      => $e->getLine(),
-                    'previous'  => $e->getPrevious() ? [
-                        'exception' => get_class($e->getPrevious()),
-                        'message'   => $e->getPrevious()->getMessage(),
-                        'file'      => $e->getPrevious()->getFile(),
-                        'line'      => $e->getPrevious()->getLine(),
-                    ] : null,
-                    'trace' => collect($e->getTrace())
-                        ->map(fn ($t) => Arr::except($t, ['args']))
-                        ->take(15)
-                        ->all(),
-                ], 500);
-            }
+            error_log("VERCEL ERROR: " . $e->getMessage() . " in " . $e->getFile() . ":" . $e->getLine());
+            return response()->json([
+                'exception' => get_class($e),
+                'message'   => $e->getMessage(),
+                'file'      => $e->getFile(),
+                'line'      => $e->getLine(),
+                'previous'  => $e->getPrevious() ? [
+                    'exception' => get_class($e->getPrevious()),
+                    'message'   => $e->getPrevious()->getMessage(),
+                    'file'      => $e->getPrevious()->getFile(),
+                    'line'      => $e->getPrevious()->getLine(),
+                ] : null,
+                'trace' => collect($e->getTrace())
+                    ->map(fn ($t) => Arr::except($t, ['args']))
+                    ->take(15)
+                    ->all(),
+            ], 500);
         });
     })->create();
 
