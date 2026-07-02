@@ -20,32 +20,7 @@ $app = Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        // --- Vercel debug fix ---
-        // Laravel selalu coba render Blade view khusus (mis. 500.blade.php)
-        // untuk HttpException, terlepas dari APP_DEBUG. Kalau ViewServiceProvider
-        // gagal register karena error lain lebih awal, ini bikin error asli
-        // ketutup sama "Target class [view] does not exist".
-        // Override render() di sini supaya SELALU balas JSON mentah dulu,
-        // biar kita bisa lihat root cause-nya tanpa lewat Blade.
-        $exceptions->render(function (\Throwable $e, $request) {
-            error_log("VERCEL ERROR: " . $e->getMessage() . " in " . $e->getFile() . ":" . $e->getLine());
-            return response()->json([
-                'exception' => get_class($e),
-                'message'   => $e->getMessage(),
-                'file'      => $e->getFile(),
-                'line'      => $e->getLine(),
-                'previous'  => $e->getPrevious() ? [
-                    'exception' => get_class($e->getPrevious()),
-                    'message'   => $e->getPrevious()->getMessage(),
-                    'file'      => $e->getPrevious()->getFile(),
-                    'line'      => $e->getPrevious()->getLine(),
-                ] : null,
-                'trace' => collect($e->getTrace())
-                    ->map(fn ($t) => Arr::except($t, ['args']))
-                    ->take(15)
-                    ->all(),
-            ], 500);
-        });
+        //
     })->create();
 
 // --- Vercel fix: filesystem read-only kecuali /tmp ---
