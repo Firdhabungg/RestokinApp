@@ -29,6 +29,7 @@ $app = Application::configure(basePath: dirname(__DIR__))
         // biar kita bisa lihat root cause-nya tanpa lewat Blade.
         $exceptions->render(function (\Throwable $e, $request) {
             if (config('app.debug')) {
+                error_log("VERCEL ERROR: " . $e->getMessage() . " in " . $e->getFile() . ":" . $e->getLine());
                 return response()->json([
                     'exception' => get_class($e),
                     'message'   => $e->getMessage(),
