@@ -12,7 +12,7 @@ return new class extends Migration
     {
         $driver = DB::getDriverName();
 
-        if (in_array($driver, ['pgsql', 'postgres'], true)) {
+        if (!in_array($driver, ['mysql', 'mariadb'], true)) {
             return;
         }
 
@@ -27,7 +27,7 @@ return new class extends Migration
     {
         $driver = DB::getDriverName();
 
-        if (in_array($driver, ['pgsql', 'postgres'], true)) {
+        if (!in_array($driver, ['mysql', 'mariadb'], true)) {
             return;
         }
 
