@@ -13,7 +13,7 @@
                     class="bg-white rounded-xl p-6 shadow-sm border {{ $plan->slug === 'pro' ? 'border-blue-200' : 'border-gray-100' }} relative overflow-hidden">
                     @if ($plan->slug === 'pro')
                         <span
-                            class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-black px-4 py-1 rounded-bl-xl uppercase">
+                            class="absolute top-0 right-0 bg-blue-500 text-white text-2xs font-black px-4 py-1 rounded-bl-xl uppercase">
                             Populer
                         </span>
                     @endif
@@ -24,7 +24,7 @@
                                 class="fas {{ $plan->slug === 'pro' ? 'fa-bolt' : ($plan->slug === 'free' ? 'fa-gift' : 'fa-crown') }} text-lg"></i>
                         </div>
                         <span
-                            class="text-[10px] font-bold {{ $plan->slug === 'pro' ? 'text-blue-500' : 'text-gray-400' }} uppercase tracking-widest">
+                            class="text-2xs font-bold {{ $plan->slug === 'pro' ? 'text-blue-500' : 'text-gray-400' }} uppercase tracking-widest">
                             {{ $plan->slug === 'free' ? 'Trial' : ($plan->slug === 'pro' ? 'Growth' : 'Premium') }}
                         </span>
                     </div>
