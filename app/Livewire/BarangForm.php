@@ -108,24 +108,28 @@ class BarangForm extends Component
 
     private function generateKodeBarang(int $tokoId): string
     {
-        do {
-            $lastBarang = Barang::where('toko_id', $tokoId)
-                ->where('kode_barang', 'like', 'BRG-%')
-                ->orderByRaw('CAST(SUBSTRING(kode_barang, 5) AS UNSIGNED) DESC')
-                ->first();
+        $existingBarangs = Barang::where('toko_id', $tokoId)
+            ->where('kode_barang', 'like', 'BRG-%')
+            ->pluck('kode_barang');
 
-            $newNumber = $lastBarang
-                ? (int) substr($lastBarang->kode_barang, 4) + 1
-                : 1;
+        return $this->buildKodeBarang($existingBarangs->all());
+    }
 
-            $kode = 'BRG-' . str_pad($newNumber, 5, '0', STR_PAD_LEFT);
+    private function buildKodeBarang(array $existingBarangs): string
+    {
+        $maxNumber = collect($existingBarangs)
+            ->map(function (string $kodeBarang): ?int {
+                preg_match('/^BRG-(\d+)$/', $kodeBarang, $matches);
 
-            $exists = Barang::where('toko_id', $tokoId)
-                ->where('kode_barang', $kode)
-                ->exists();
-        } while ($exists);
+                return $matches[1] ?? null;
+            })
+            ->filter()
+            ->map(fn(int|string $number) => (int) $number)
+            ->max();
 
-        return $kode;
+        $newNumber = $maxNumber !== null ? $maxNumber + 1 : 1;
+
+        return 'BRG-' . str_pad($newNumber, 5, '0', STR_PAD_LEFT);
     }
 
     public function render()
