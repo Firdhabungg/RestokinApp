@@ -10,7 +10,7 @@
     <div class="flex items-center gap-4">
         <div>
             <h1 class="text-xl font-bold text-slate-800">@yield('page-title', 'Dashboard')</h1>
-            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">@yield('page-description')</p>
+            <p class="text-2xs text-slate-400 font-bold uppercase tracking-widest">@yield('page-description')</p>
         </div>
     </div>
 
@@ -45,7 +45,7 @@
                     <template x-for="notif in notifications" :key="notif.message">
                         <a :href="notif.link"
                             class="flex items-start gap-3 p-3 hover:bg-gray-50 border-b border-gray-50">
-                            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
                                 :class="notif.color === 'red' ? 'bg-red-100' : 'bg-orange-100'">
                                 <i :class="'fas ' + notif.icon + (notif.color === 'red' ? ' text-red-600' :
                                     ' text-orange-600')"
