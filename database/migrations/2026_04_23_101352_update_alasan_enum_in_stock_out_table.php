@@ -9,11 +9,23 @@ return new class extends Migration
 {
     public function up(): void
     {
+        $driver = DB::getDriverName();
+
+        if (in_array($driver, ['pgsql', 'postgres'], true)) {
+            return;
+        }
+
         DB::statement("ALTER TABLE stock_out MODIFY COLUMN alasan ENUM('penjualan','rusak','kadaluarsa','retur','hilang','sample','lainnya') NOT NULL DEFAULT 'penjualan'");
     }
 
     public function down(): void
     {
+        $driver = DB::getDriverName();
+
+        if (in_array($driver, ['pgsql', 'postgres'], true)) {
+            return;
+        }
+
         DB::statement("ALTER TABLE stock_out MODIFY COLUMN alasan ENUM('penjualan','rusak','kadaluarsa','retur','lainnya') NOT NULL DEFAULT 'penjualan'");
     }
 };

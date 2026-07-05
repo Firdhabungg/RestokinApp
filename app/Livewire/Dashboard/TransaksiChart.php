@@ -5,6 +5,7 @@ namespace App\Livewire\Dashboard;
 use App\Models\Sale;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class TransaksiChart extends Component
@@ -19,22 +20,23 @@ class TransaksiChart extends Component
     public function getChartData(): array
     {
         $tokoId = Auth::user()->effective_toko_id;
+        $driver = DB::getDriverName();
 
         if ($this->period === 'yearly') {
-            // Per bulan dalam 1 tahun → format Y-m
+            $dateExpression = $this->getDateGroupingExpression($driver, 'yearly');
             $sales = Sale::where('toko_id', $tokoId)
                 ->completed()
                 ->byPeriod($this->period)
-                ->selectRaw('DATE_FORMAT(tanggal, "%Y-%m") as date, COUNT(*) as total_transaksi, SUM(total) as total_penjualan')
+                ->selectRaw($dateExpression . " as date, COUNT(*) as total_transaksi, SUM(total) as total_penjualan")
                 ->groupBy('date')
                 ->orderBy('date')
                 ->get();
         } else {
-            // Weekly & Monthly → per hari → format Y-m-d
+            $dateExpression = $this->getDateGroupingExpression($driver, 'daily');
             $sales = Sale::where('toko_id', $tokoId)
                 ->completed()
                 ->byPeriod($this->period)
-                ->selectRaw('DATE(tanggal) as date, COUNT(*) as total_transaksi, SUM(total) as total_penjualan')
+                ->selectRaw($dateExpression . " as date, COUNT(*) as total_transaksi, SUM(total) as total_penjualan")
                 ->groupBy('date')
                 ->orderBy('date')
                 ->get();
@@ -56,6 +58,23 @@ class TransaksiChart extends Component
             'transaksi' => $transaksiData,
             'penjualan' => $penjualanData,
         ];
+    }
+
+    public function getDateGroupingExpression(string $driver, string $period): string
+    {
+        if ($period === 'yearly') {
+            return match ($driver) {
+                'pgsql', 'postgres' => "to_char(tanggal, 'YYYY-MM')",
+                'sqlite' => "strftime('%Y-%m', tanggal)",
+                default => "DATE_FORMAT(tanggal, '%Y-%m')",
+            };
+        }
+
+        return match ($driver) {
+            'pgsql', 'postgres' => "to_char(tanggal, 'YYYY-MM-DD')",
+            'sqlite' => "strftime('%Y-%m-%d', tanggal)",
+            default => "DATE(tanggal)",
+        };
     }
 
     // ⑤ Generate label sumbu-X sesuai periode

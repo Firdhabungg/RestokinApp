@@ -29,7 +29,10 @@ class DashboardController extends Controller
         */
         $omzetTotal = Subscription::where('status', 'active')
             ->whereHas('plan', function ($q) {
-                $q->where('price', '>', 0)->where('is_active', true);
+                $q->where('price', '>', 0)
+                    ->where(function ($query) {
+                        $query->where('is_active', true)->orWhere('is_active', 't');
+                    });
             })
             ->with('plan:id,price')
             ->get()

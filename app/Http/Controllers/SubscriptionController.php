@@ -18,7 +18,9 @@ class SubscriptionController extends Controller
 
     public function plans()
     {
-        $plans = SubscriptionPlan::where('is_active', true)->get();
+        $plans = SubscriptionPlan::where(function ($query) {
+            $query->where('is_active', true)->orWhere('is_active', 't');
+        })->get();
 
         return view('subscription.plans', compact('plans'));
     }
@@ -33,7 +35,9 @@ class SubscriptionController extends Controller
         }
 
         $subscription = $toko->activeSubscription;
-        $plans = SubscriptionPlan::where('is_active', true)->get();
+        $plans = SubscriptionPlan::where(function ($query) {
+            $query->where('is_active', true)->orWhere('is_active', 't');
+        })->get();
         $hasUsedFreeTrial = $toko->hasUsedFreeTrial();
 
         return view('subscription.index', compact('subscription', 'plans', 'toko', 'hasUsedFreeTrial'));
@@ -48,7 +52,11 @@ class SubscriptionController extends Controller
             return redirect()->route('dashboard')->with('error', 'Anda belum memiliki toko.');
         }
 
-        $plan = SubscriptionPlan::where('slug', $planSlug)->where('is_active', true)->firstOrFail();
+        $plan = SubscriptionPlan::where('slug', $planSlug)
+            ->where(function ($query) {
+                $query->where('is_active', true)->orWhere('is_active', 't');
+            })
+            ->firstOrFail();
 
         // Perbaikan: Jika paket gratis, langsung alihkan ke fungsi trial tanpa Midtrans
         if ($plan->isFree() || $plan->price <= 0) {
@@ -161,7 +169,9 @@ class SubscriptionController extends Controller
 
     public function expired()
     {
-        $plans = SubscriptionPlan::where('is_active', true)->where('price', '>', 0)->get();
+        $plans = SubscriptionPlan::where(function ($query) {
+            $query->where('is_active', true)->orWhere('is_active', 't');
+        })->where('price', '>', 0)->get();
 
         return view('subscription.expired', compact('plans'));
     }

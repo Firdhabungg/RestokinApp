@@ -10,6 +10,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        $driver = DB::getDriverName();
+
+        if (in_array($driver, ['pgsql', 'postgres'], true)) {
+            return;
+        }
+
         // Modify ENUM to include 'sample'
         DB::statement("ALTER TABLE stock_out MODIFY COLUMN alasan ENUM('penjualan', 'rusak', 'kadaluarsa', 'retur', 'sample', 'lainnya') DEFAULT 'penjualan'");
     }
@@ -19,6 +25,12 @@ return new class extends Migration
      */
     public function down(): void
     {
+        $driver = DB::getDriverName();
+
+        if (in_array($driver, ['pgsql', 'postgres'], true)) {
+            return;
+        }
+
         // Revert back to original ENUM
         DB::statement("ALTER TABLE stock_out MODIFY COLUMN alasan ENUM('penjualan', 'rusak', 'kadaluarsa', 'retur', 'lainnya') DEFAULT 'penjualan'");
     }
