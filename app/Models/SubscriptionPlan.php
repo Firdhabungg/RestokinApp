@@ -40,6 +40,6 @@ class SubscriptionPlan extends Model
 
     public function scopeActive($query)
     {
-        return $query->where('is_active', true);
+        return $query->whereRaw('is_active::int = 1');
     }
 }
