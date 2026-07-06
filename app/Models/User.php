@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\VerifyEmailNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -99,6 +100,15 @@ class User extends Authenticatable implements MustVerifyEmail
     public function canManageToko(): bool
     {
         return $this->isSuperAdmin() || $this->isOwner();
+    }
+
+    /**
+     * Kirim notifikasi verifikasi email secara sinkronus (tanpa queue).
+     * Wajib untuk Vercel serverless yang tidak mendukung queue worker.
+     */
+    public function sendEmailVerificationNotification(): void
+    {
+        $this->notify(new VerifyEmailNotification());
     }
 
     public function stockIn(): \Illuminate\Database\Eloquent\Relations\HasMany
