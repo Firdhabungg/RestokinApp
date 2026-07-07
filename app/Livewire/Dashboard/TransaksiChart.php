@@ -12,8 +12,9 @@ class TransaksiChart extends Component
 {
     public string $period = 'monthly';
 
-    public function updatedPeriod(): void
+    public function setPeriod(string $value): void
     {
+        $this->period = $value;
         $this->dispatch('transaksiChartUpdated', data: $this->getChartData());
     }
 

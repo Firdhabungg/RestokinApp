@@ -48,8 +48,9 @@ class BarangTerlaris extends Component
         return array_slice($palette, 0, $count);
     }
 
-    public function updatedPeriod(): void
+    public function setPeriod(string $value): void
     {
+        $this->period = $value;
         $this->dispatch('barangTerlarisUpdated', data: $this->getChartData());
     }
 

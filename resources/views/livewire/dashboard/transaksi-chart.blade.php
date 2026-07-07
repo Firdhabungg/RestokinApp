@@ -11,7 +11,7 @@
         {{-- ① Tombol Filter Periode --}}
         <div class="inline-flex rounded-lg shadow-sm">
             @foreach (['weekly' => 'Minggu', 'monthly' => 'Bulan', 'yearly' => 'Tahun'] as $val => $label)
-                <button wire:click="$set('period', '{{ $val }}')"
+                <button wire:click="setPeriod('{{ $val }}')"
                     class="px-4 py-2 text-sm font-medium border transition-all
                         {{ $loop->first ? 'rounded-s-lg' : '' }}
                         {{ $loop->last ? 'rounded-e-lg' : '' }}
