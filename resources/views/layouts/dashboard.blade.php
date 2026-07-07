@@ -57,7 +57,7 @@
                 text: 'Apakah Anda yakin ingin keluar dari aplikasi?',
                 icon: 'question',
                 showCancelButton: true,
-                confirmButtonColor: '#F59E0B',
+                confirmButtonColor: '#FF0000',
                 cancelButtonColor: '#6B7280',
                 confirmButtonText: 'Logout',
                 cancelButtonText: 'Batal'
