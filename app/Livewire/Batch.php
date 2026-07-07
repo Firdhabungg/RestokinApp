@@ -68,9 +68,9 @@ class Batch extends Component
 
         $statusCounts = StockBatch::where('toko_id', $tokoId)
             ->selectRaw("
-                SUM((status = 'aman')::int) as aman,
-                SUM((status = 'hampir_kadaluarsa')::int) as hampir_kadaluarsa,
-                SUM((status = 'kadaluarsa')::int) as kadaluarsa
+                SUM(CASE WHEN status = 'aman' THEN 1 ELSE 0 END) as aman,
+                SUM(CASE WHEN status = 'hampir_kadaluarsa' THEN 1 ELSE 0 END) as hampir_kadaluarsa,
+                SUM(CASE WHEN status = 'kadaluarsa' THEN 1 ELSE 0 END) as kadaluarsa
             ")
             ->first();
 

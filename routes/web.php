@@ -9,6 +9,8 @@ use App\Livewire\Barangs;
 use App\Livewire\Kasir;
 use App\Livewire\KasirForm;
 use App\Livewire\KategoriDetail;
+use App\Livewire\PenjualanForm;
+use App\Livewire\PenjualanDetail;
 use App\Livewire\Kategoris;
 use App\Livewire\Laporan\LaporanBarangKeluar;
 use App\Livewire\Laporan\LaporanBarangMasuk;
@@ -120,8 +122,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->name('profil.toko.update');
 
     // Penjualan (POS) - Kasir & Owner
-    Route::resource('penjualan', PenjualanController::class)->only(['index', 'create', 'store', 'show']);
-    Route::get('/penjualan/get-barang/{id}', [PenjualanController::class, 'getBarang'])->name('penjualan.getBarang');
+    Route::get('/penjualan', [PenjualanController::class, 'index'])->name('penjualan.index');
+    Route::get('/penjualan/create', PenjualanForm::class)->name('penjualan.create');
+    Route::get('/penjualan/{sale}', PenjualanDetail::class)->name('penjualan.show');
 
     // Data Barang - Read-only untuk semua (termasuk kasir)
     Route::get('/barang', Barangs::class)->name('barang.index');
